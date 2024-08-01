@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.sixamtech.sixvalley"
+    package="net.nichen.app"
     android:targetSandboxVersion="1">
 
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -33,11 +33,11 @@
     </queries>
 
     <application
-        android:label="6Valley"
+        android:label="Nichen"
         android:requestLegacyExternalStorage="true"
         android:usesCleartextTraffic="true"
         android:networkSecurityConfig="@xml/network_security_config"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/launcher_icon">
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

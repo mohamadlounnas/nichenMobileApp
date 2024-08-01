@@ -50,6 +50,7 @@ import 'package:flutter_sixvalley_ecommerce/theme/light_theme.dart';
 import 'package:flutter_sixvalley_ecommerce/utill/app_constants.dart';
 import 'package:provider/provider.dart';
 import 'di_container.dart' as di;
+import 'firebase_options.dart';
 import 'helper/custom_delegate.dart';
 import 'localization/app_localization.dart';
 
@@ -60,18 +61,7 @@ Future<void> main() async {
   HttpOverrides.global = MyHttpOverrides();
   WidgetsFlutterBinding.ensureInitialized();
 if(Firebase.apps.isEmpty){
-  if(Platform.isAndroid){
-    await Firebase.initializeApp(options: const FirebaseOptions(
-        apiKey: "AIzaSyAKU-DI2rU7MeacKmFx1noxtsK-CFNy5GM",
-        authDomain: "sixvally-ecommerce.firebaseapp.com",
-        projectId: "sixvally-ecommerce",
-        storageBucket: "sixvally-ecommerce.appspot.com",
-        messagingSenderId: "975837518429",
-        appId: "1:975837518429:web:91cf124f328b84449f0bb4"
-    ));
-  }else{
-    await Firebase.initializeApp();
-  }
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 }
   await FlutterDownloader.initialize(debug: true , ignoreSsl: true);
   await di.init();
